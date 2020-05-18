@@ -32,10 +32,8 @@ for (m = 0; m <= 11; m++)
   var optn = document.createElement("OPTION");
   optn.text = monthArray[m];  
   optn.value = (m);
-
   document.getElementById('month').options.add(optn);
 }
-
 document.getElementById("year").innerHTML = createYear;
 var calendar = document.getElementById("calendar");
 var lang = calendar.getAttribute('data-lang');
@@ -54,7 +52,6 @@ $dataHead += "</tr>";
 document.getElementById("thead-month").innerHTML = $dataHead;
 monthAndYear = document.getElementById("monthAndYear");
 showCalendar(currentMonth, currentYear);
-
 function moveDate(para)
 {
   if (para == "prev")
@@ -69,17 +66,13 @@ function moveDate(para)
   }
   showCalendar(currentMonth, currentYear);
 }
-
 function change_month_year()
 {
   currentYear = parseInt(selectYear.value);
   currentMonth = parseInt(selectMonth.value);
   document.getElementById("date-current").innerHTML = "";
-
   showCalendar(currentMonth, currentYear);
 }
-
-
 function showCalendar(month, year)
 {
   var firstDay = (new Date(year, month)).getDay();
@@ -102,15 +95,9 @@ function showCalendar(month, year)
     {
       if (i === 0 && j < firstDay)
       {
-
-
         var cell = document.createElement("td");
-
-
         cell.innerHTML = "<span class='prev-date' disabled>" + (prevDate - firstDay + j + 1) + "</span>";
         row.appendChild(cell);
-
-
       }
       else if (date > daysInMonth(month, year))
       {
@@ -119,7 +106,6 @@ function showCalendar(month, year)
       else
       {
         cell = document.createElement("td");
-
         cell.innerHTML = "<span>" + date + "</span>";
         if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth())
         {
@@ -151,16 +137,12 @@ function showCalendar(month, year)
         };
     }
   }
-
-  function getval(cel)
+ function getval(cel)
   {
     var k = cel.innerHTML
     document.getElementById("date-current").innerHTML = k + " " + months[month] + " " + year;
-
   }
-
 }
-
 function daysInMonth(iMonth, iYear)
 {
   return 32 - new Date(iYear, iMonth, 32).getDate();
