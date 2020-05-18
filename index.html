@@ -7,10 +7,11 @@
 
   <div class="container-calendar">
     <h3 id="monthAndYear"></h3>
+    <h4 id="date-current"></h4>
     
     <div class="button-container-calendar">
-      <button id="previous" onclick="previous()">&#8249;</button>
-      <button id="next" onclick="next()">&#8250;</button>
+      <button id="previous" onclick="moveDate('prev')">&#8249;</button>
+      <button id="next" onclick="moveDate('next')">&#8250;</button>
     </div>
     
     <table class="table-calendar" id="calendar" data-lang="en">
@@ -20,7 +21,7 @@
     
     <div class="footer-container-calendar">
      <label for="month">Change Month and Year: </label>
-     <select id="month" onchange="jump()">
+     <select id="month" onchange="change_month_year()">
        <option value=0>Jan</option>
        <option value=1>Feb</option>
        <option value=2>Mar</option>
@@ -34,7 +35,7 @@
        <option value=10>Nov</option>
        <option value=11>Dec</option>
      </select>
-     <select id="year" onchange="jump()"></select>       
+     <select id="year" onchange="change_month_year()"></select>       
    </div>
 
  </div>
