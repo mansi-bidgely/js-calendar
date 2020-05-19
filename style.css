@@ -12,9 +12,9 @@ body {
 }
 
 .col {
-  position: relative;
   float: left;
   height: 100%;
+  position: relative;
 }
 
 .leftCol {
@@ -22,15 +22,15 @@ body {
 }
 
 #top {
-  margin-top: 12px;
-  text-align: center;
   color: #7c887e;
   font-size: 27px;
+  margin-top: 12px;
+  text-align: center;
 }
 
 img {
-  width: 307px;
   height: 450px;
+  width: 307px;
 }
 
 .tableCalendar {
@@ -51,14 +51,14 @@ img {
 }
 
 .monthYearChange {
-  margin: 37px 2px 2px 60px;
-  font-size: 19px;
   color: #ffaf72;
+  font-size: 19px;
+  margin: 37px 2px 2px 60px;
 }
 
 .monthYearChange select {
-  font-size: 14px;
   color: #ffaf72;
+  font-size: 14px;
 }
 
 .prevDate {
@@ -71,11 +71,11 @@ img {
 }
 
 #previous {
-  float: left;
-  width: 38px;
-  height: 37px;
-  color: #ffffff;
   background-color: #ffaf72;
+  color: #ffffff;
+  float: left;
+  height: 37px;
+  width: 38px;
 }
 
 #next {
@@ -88,17 +88,17 @@ img {
 }
 
 .calendar {
-  position: absolute;
+  background-color: #ffffff;
   border-radius: 4px;
-  overflow: hidden;
-  width: 800px;
+  color: #333333;
   height: 450px;
   left: 50%;
   margin-left: -400px;
   margin-top: -225px;
+  overflow: hidden;
+  position: absolute;
   top: 50%;
-  background-color: #ffffff;
-  color: #333333;
+  width: 800px;
 }
 
 .calendar .rightCol {
@@ -107,6 +107,6 @@ img {
 
 .calendar .rightCol h2 {
   color: #C7BEBE;
-  text-align: right;
   margin-bottom: 70px;
+  text-align: right;
 }
