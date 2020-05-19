@@ -1,24 +1,29 @@
+<!DOCTYPE html>
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<body>
 <div class="wrapper">
-  <div class="container-calendar">
+  <div class="containerCalendar">
     <h3 id="monthAndYear"></h3>
-    <h4 id="date-current"></h4>
-    <div class="button-container-calendar">
+    <h4 id="dateCurrent"></h4>
+    <div class="buttonCcontainerCalendar">
       <button id="previous" onclick="moveDate('prev')">&#8249;</button>
       <button id="next" onclick="moveDate('next')">&#8250;</button>
     </div>
-    <table class="table-calendar" id="calendar" data-lang="en">
-      <thead id="thead-month"></thead>
-      <tbody id="calendar-body"></tbody>
+    <table class="tableCalendar" id="calendar">
+      <thead id="theadMonth"></thead>
+      <tbody id="calendarBody"></tbody>
     </table>
-    <div class="footer-container-calendar">
+    <div class="footerContainerCalendar">
       <label for="month">Change Month and Year: </label>
-      <select name="month" id="month" onchange="change_month_year()">
+      <select name="month" id="month" onchange="changeMonthYear()">
       </select>
-      <select id="year" onchange="change_month_year()"></select>       
+      <select id="year" onchange="changeMonthYear()"></select>       
     </div>
   </div>
 </div>
+</body>
+</html>
 <script type="text/javascript" src="script.js"></script>
