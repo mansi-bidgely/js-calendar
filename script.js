@@ -19,16 +19,21 @@ var lang = calendar.getAttribute('data-lang');
 var months = "";
 var days = "";
 var monthDefault = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+
 for (m = 0; m <= 11; m++) {
   var optn = document.createElement("OPTION");
-  optn.text = monthDefault[m];  
+  optn.text = monthDefault[m];
   optn.value = (m);
   document.getElementById('month').options.add(optn);
 }
+
+
 var dayDefault = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 months = monthDefault;
 days = dayDefault;
 var $dataHead = "<tr>";
+
 for (dhead in days) {
   $dataHead += "<th data-days='" + days[dhead] + "'>" + days[dhead] + "</th>";
 }
@@ -58,12 +63,16 @@ function changeMonthYear() {
   showCalendar(currentMonth, currentYear);
 }
 
+var day = today.getDay();
+document.getElementById("day").innerHTML = dayDefault[day] + "day";
+
 
 function showCalendar(month, year) {
   var firstDay = (new Date(year, month)).getDay();
   table = document.getElementById("calendarBody");
   table.innerHTML = "";
   monthAndYear.innerHTML = months[month] + " " + year;
+
   selectYear.value = year;
   selectMonth.value = month;
   var prevDate = new Date(
@@ -72,17 +81,23 @@ function showCalendar(month, year) {
     0
   ).getDate();
   var date = 1;
+  var dateNext = 1;
 
   for (var i = 0; i < 6; i++) {
     var row = document.createElement("tr");
     for (var j = 0; j < 7; j++) {
       if (i === 0 && j < firstDay) {
         var cell = document.createElement("td");
-        cell.innerHTML = "<span class='prev-date' disabled>" + (prevDate - firstDay + j + 1) + "</span>";
+        cell.innerHTML = "<span class='prevDate' disabled>" + (prevDate - firstDay + j + 1) + "</span>";
         row.appendChild(cell);
       }
       else if (date > daysInMonth(month, year)) {
-        break;
+        var cell = document.createElement("td");
+
+        cell.innerHTML = "<span class='prevDate' disabled>" + dateNext + "</span>";
+        row.appendChild(cell);
+        dateNext++;
+
       }
       else {
         cell = document.createElement("td");
@@ -96,27 +111,31 @@ function showCalendar(month, year) {
     }
     table.appendChild(row);
   }
- 
+
   if (table != null) {
-    for (var i = 0; i < table.rows.length; i++)
-    {
+    for (var i = 0; i < table.rows.length; i++) {
       for (var j = 0; j < table.rows[i].cells.length; j++)
-        table.rows[i].cells[j].onclick = function ()
-        {
+        table.rows[i].cells[j].onclick = function () {
           getval(this);
         };
     }
   }
- function getval(cel) {
+  var day = today.getDay();
+
+  document.getElementById("day").innerHTML = dayDefault[day] + "day";
+
+  function getval(cel) {
     var k = cel.innerHTML
-    document.getElementById("dateCurrent").innerHTML = k + " " + months[month] + " " + year;
+
+    document.getElementById("dateCurrent").innerHTML = k;
+    document.getElementById("day").innerHTML = dayDefault[k] + "day";
+
+
   }
 
 }
 
 
-
-function daysInMonth(iMonth, iYear)
-{
+function daysInMonth(iMonth, iYear) {
   return 32 - new Date(iYear, iMonth, 32).getDate();
 }
