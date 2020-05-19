@@ -72,7 +72,6 @@ function showCalendar(month, year) {
   table = document.getElementById("calendarBody");
   table.innerHTML = "";
   monthAndYear.innerHTML = months[month] + " " + year;
-
   selectYear.value = year;
   selectMonth.value = month;
   var prevDate = new Date(
@@ -93,11 +92,9 @@ function showCalendar(month, year) {
       }
       else if (date > daysInMonth(month, year)) {
         var cell = document.createElement("td");
-
         cell.innerHTML = "<span class='prevDate' disabled>" + dateNext + "</span>";
         row.appendChild(cell);
         dateNext++;
-
       }
       else {
         cell = document.createElement("td");
@@ -121,18 +118,12 @@ function showCalendar(month, year) {
     }
   }
   var day = today.getDay();
-
   document.getElementById("day").innerHTML = dayDefault[day] + "day";
-
   function getval(cel) {
     var k = cel.innerHTML
-
     document.getElementById("dateCurrent").innerHTML = k;
     document.getElementById("day").innerHTML = dayDefault[k] + "day";
-
-
   }
-
 }
 
 
