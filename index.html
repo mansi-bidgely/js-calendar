@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-  <div class="calendar">
-    <div class="col leftCol">
-      <img src="images/scene2.jpg"s>
-      <h1 class="date" id="day"></h1>
-    </div>
-    <div class="col rightCol">
-      <div class="buttonContainerCalendar">
-        <h3 id="top"><span id="dateCurrent"></span> <span id="monthAndYear"></span></h3>
-        <button id="previous" onclick="moveDate('prev')">&#8249;</button>
-        <button id="next" onclick="moveDate('next')">&#8250;</button>
-        <div class="monthYearChange">
-          <label for="month">Change Month and Year: </label>
-          <select name="month" id="month" onchange="changeMonthYear()">
-          </select>
-          <select id="year" onchange="changeMonthYear()"></select>  
-        </div>
+  <head>
+    <title>Js calendar</title>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="calendar">
+      <div class="col leftColoumn">
+        <img src="images/scene2.jpg" >
+        <h1 class="date" id="day"></h1>
       </div>
-      <table class="tableCalendar" id="calendar">
-        <thead id="theadMonth"></thead>
-        <tbody id="calendarBody"></tbody>
-      </table>
+      <div class="col rightColoumn">
+        <div class="buttonContainerCalendar">
+          <h3 id="top"><span id="dateCurrent"></span> <span id="monthAndYear"></span><br><span id="events-container"></span></h3>
+          <button id="previous" onclick="moveDate('prev')">&#8249;</button>
+          <button id="next" onclick="moveDate('next')">&#8250;</button>
+          <div class="monthYearChange">
+            <label for="month">Change Month and Year: </label>
+            <select name="month" id="month" onchange="changeMonthYear()">
+            </select>
+            <select id="year" onchange="changeMonthYear()"></select>
+          </div>
+        </div>
+        <table class="tableCalendar" id="calendar">
+          <thead id="theadMonth"></thead>
+          <tbody id="calendarBody"></tbody>
+        </table>
+      </div>
     </div>
-  </div>
-</body>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
-<script type="text/javascript" src="script.js"></script>
